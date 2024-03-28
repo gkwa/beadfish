@@ -1,0 +1,33 @@
+[project]
+name = "beadfish"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Taylor Monacelli", email = "taylormonacelli@gmail.com" }
+]
+dependencies = [
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+
+[project.scripts]
+beadfish = "beadfish:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "black>=24.2.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/beadfish"]
+
+[tool.ruff.lint]
+extend-select = ["I"]
